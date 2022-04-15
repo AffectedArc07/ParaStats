@@ -5,11 +5,16 @@ on:
     branches: [ master ]
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Install Node 14
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
 
       - name: Install
         run: npm i
