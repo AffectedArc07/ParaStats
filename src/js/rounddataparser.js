@@ -57,6 +57,7 @@ class RoundDataParser {
     // Ragin + Wizard
     let wizard_dict = {};
     wizard_dict["wizard loss - wizard killed"] = (<Tag color="red"><FontAwesomeIcon icon={faTimes} />&nbsp;{"Loss - Wizard killed"}</Tag>);
+    wizard_dict["raging wizard loss - wizard killed"] = (<Tag color="red"><FontAwesomeIcon icon={faTimes} />&nbsp;{"Raging Loss - Wizard killed"}</Tag>);
     wizard_dict["undefined"] = (<Tag color="green"><FontAwesomeIcon icon={faCheck} />&nbsp;{"Win - Wizard wins"}</Tag>);
     this.result_string_map["ragin' mages"] = wizard_dict;
     this.result_string_map["wizard"] = wizard_dict;
@@ -171,6 +172,9 @@ class RoundDataParser {
           <Descriptions.Item label="Round Duration" span={3}>
             {this.parseDuration(md)}
           </Descriptions.Item>
+          <Descriptions.Item label="Map Name" span={3}>
+            {md["map_name"]}
+          </Descriptions.Item>
           <Descriptions.Item label="Gamemode" span={3}>
             {this.formatMode(md["game_mode"])}
           </Descriptions.Item>
@@ -211,7 +215,8 @@ class RoundDataParser {
     return (
       <>
         <h3>Players over time</h3>
-        <Line {...config} style={{ height: "340px", marginLeft: "20px" }} />
+        { /* 396px may seem random, but its the exact size of the table on the left */}
+        <Line {...config} style={{ height: "396px", marginLeft: "20px" }} />
       </>
     );
   }

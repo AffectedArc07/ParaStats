@@ -49,6 +49,11 @@ export const RoundList = () => {
       key: 'rid',
     },
     {
+      title: 'Map',
+      dataIndex: 'map',
+      key: 'map',
+    },
+    {
       title: 'Gamemode',
       dataIndex: 'gamemode',
       key: 'gamemode',
@@ -91,6 +96,7 @@ export const RoundList = () => {
     clean_round["result"] = RDP.parseEndString(r);
     clean_round["stime"] = r["start_datetime"];
     clean_round["etime"] = r["end_datetime"];
+    clean_round["map"] = r["map_name"];
     clean_round["duration"] = RDP.parseDuration(r);
     table_data.push(clean_round);
   });
