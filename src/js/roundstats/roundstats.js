@@ -62,6 +62,9 @@ export const RoundStats = () => {
   return (
     <>
       {pageheader}
+      <div style={{ "text-align": "center", "margin-bottom": "10px" }}>
+        {RDP.modeImage(roundData["metadata"]["game_mode"], roundData["metadata"]["game_mode_result"])}
+      </div>
       <Row>
         <Col span={12}>
           {RDP.getMetadataTable(roundData["metadata"])}

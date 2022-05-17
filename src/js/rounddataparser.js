@@ -27,6 +27,21 @@ class RoundDataParser {
     this.mode_icon_map["vampire"] = (<><FontAwesomeIcon icon={faSyringe} />&nbsp;{"Vampire"}</>);
     this.mode_icon_map["wizard"] = (<><FontAwesomeIcon icon={faHatWizard} />&nbsp;{"Wizard"}</>);
 
+    this.mode_img_map = {};
+    // Key: Mode in the round table \ Value: Image name
+    this.mode_img_map["abduction"] = (<img src={require("../img/abduction.png")} />);
+    this.mode_img_map["blob"] = (<img src={require("../img/blob.png")} />);
+    this.mode_img_map["changeling"] = (<img src={require("../img/changeling.png")} />);
+    this.mode_img_map["cult"] = (<img src={require("../img/cult.png")} />);
+    this.mode_img_map["extended"] = (<img src={require("../img/extended.png")} />);
+    this.mode_img_map["meteor"] = (<img src={require("../img/meteor.png")} />);
+    this.mode_img_map["ragin' mages"] = (<img src={require("../img/raginmages.png")} />);
+    this.mode_img_map["revolution"] = (<img src={require("../img/revolution.png")} />);
+    this.mode_img_map["traitor"] = (<img src={require("../img/traitor.png")} />);
+    this.mode_img_map["traitor+changeling"] = (<img src={require("../img/traitorchan.png")} />);
+    this.mode_img_map["vampire"] = (<img src={require("../img/vampires.png")} />);
+    this.mode_img_map["wizard"] = (<img src={require("../img/wizard.png")} />);
+
     // Setup our result map for rounds that have their own handlers
     this.result_string_map = {};
 
@@ -84,6 +99,23 @@ class RoundDataParser {
     let s = Math.floor(d % 3600 % 60);
 
     return h + ":" + m + ":" + s;
+  }
+
+  modeImage(mode, moderesult) {
+    if (mode === "nuclear emergency") {
+      // Special case for nukeops
+      if (moderesult.startsWith("nuclear loss")) {
+        return (<img src={require("../img/flukeops.png")} />);
+      } else {
+        return (<img src={require("../img/nukeops.png")} />);
+      }
+    }
+
+    if (mode in this.mode_img_map) {
+      return this.mode_img_map[mode];
+    }
+
+    return (<>This mode doesn&apos;t have a fancy art icon. If you are good with art, feel free to contribute by clicking &apos;Source&apos; in the top left.</>);
   }
 
   parseDuration(r) {
