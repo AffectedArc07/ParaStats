@@ -59,7 +59,7 @@ class RoundDataParser {
 
     // Nuclear emergency
     this.result_string_map["nuclear emergency"] = {};
-    this.result_string_map["nuclear emergency"]["nuclear win - syndicate nuke"] = (<Tag color="green"><FontAwesomeIcon icon={faCheck} />&nbsp;{"Win - Nuke Successful"}</Tag>);
+    this.result_string_map["nuclear emergency"]["nuclear win - syndicate nuke"] = (<Tag color="green"><FontAwesomeIcon icon={faCheck} />&nbsp;{"Win - Nuke successful"}</Tag>);
     this.result_string_map["nuclear emergency"]["nuclear halfwin - syndicate nuke - did not evacuate in time"] = (<Tag color="blue"><FontAwesomeIcon icon={faMinus} />&nbsp;{"Half win - Nuke successful - Operatives did not escape in time"}</Tag>);
     this.result_string_map["nuclear emergency"]["nuclear halfwin - blew wrong station"] = (<Tag color="blue"><FontAwesomeIcon icon={faMinus} />&nbsp;{"Half win - Nuked wrong station"}</Tag>);
     this.result_string_map["nuclear emergency"]["nuclear halfwin - blew wrong station - did not evacuate in time"] = (<Tag color="blue"><FontAwesomeIcon icon={faMinus} />&nbsp;{"Half win - Nuked wrong station - Operatives did not escape in time"}</Tag>);
