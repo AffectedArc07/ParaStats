@@ -49,7 +49,7 @@ class RoundDataParser {
     this.result_string_map["blob"] = {};
     this.result_string_map["blob"]["blob win - blob took over"] = (<Tag color="green"><FontAwesomeIcon icon={faCheck} />&nbsp;{"Win - Blob took over"}</Tag>);
     this.result_string_map["blob"]["blob halfwin - nuke"] = (<Tag color="blue"><FontAwesomeIcon icon={faMinus} />&nbsp;{"Half win - Station nuked"}</Tag>);
-    this.result_string_map["blob"]["blob loss - blob eliminated"] = (<Tag color="green"><FontAwesomeIcon icon={faTimes} />&nbsp;{"Loss - Blob eliminated"}</Tag>);
+    this.result_string_map["blob"]["blob loss - blob eliminated"] = (<Tag color="red"><FontAwesomeIcon icon={faTimes} />&nbsp;{"Loss - Blob eliminated"}</Tag>);
 
     // Cult
     this.result_string_map["cult"] = {};
