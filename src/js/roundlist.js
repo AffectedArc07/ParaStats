@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Col, Divider, Spin, Table, Button, PageHeader } from 'antd';
+import { Row, Col, Table, Button, PageHeader } from 'antd';
 import { API } from './apimanager';
 import { RDP } from './rounddataparser';
 
@@ -33,7 +33,8 @@ export const RoundList = () => {
         <Row>
           <Col span={3} />
           <Col span={16} style={{ "textAlign": "center" }}>
-            <Spin size="large" tip={"Loading..."} />
+            <img src={require("../img/loadingcat.gif")} width="100px" />
+            <h1><big>Loading...</big></h1>
           </Col>
           <Col span={3} />
         </Row>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Row, Col, Spin, PageHeader, Typography, Divider } from 'antd';
+import { Row, Col, PageHeader, Typography, Divider } from 'antd';
 import { API } from '../apimanager';
 import { RDP } from '../rounddataparser';
 import { FeedbackHolder } from './feedback/feedbackholder';
@@ -51,7 +51,8 @@ export const RoundStats = () => {
         <Row>
           <Col span={3} />
           <Col span={16} style={{ "textAlign": "center" }}>
-            <Spin size="large" tip={"Loading..."} />
+            <img src={require("../../img/loadingcat.gif")} width="100px" />
+            <h1><big>Loading...</big></h1>
           </Col>
           <Col span={3} />
         </Row>
